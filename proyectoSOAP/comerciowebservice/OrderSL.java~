@@ -1,0 +1,34 @@
+package comerciowebservice;
+
+import java.util.Vector;
+
+public class OrderSL{
+
+    private Vector usuarios =null;
+    private Vector productos=null;
+    private Vector pedidos=null;
+
+    public OrderSL(){
+
+	usuarios=new Vector();
+	productos=new Vector();
+	pedidos=new Vector();
+
+    }
+
+    public void crearUsuario(String nomUsu, float saldo, String direccion) throws Exception{
+	
+	if(nomUsu==null || saldo==null || direccion==null)
+	   throw new Exception("Datos invalidos");
+	else{
+	    Usuario usu=new Usuario();
+	    usu.setNombre(nomUsu);
+	    usu.setSaldo(saldo);
+	    usu.setDireccion(direccion);
+	    
+	}
+    }
+
+
+
+}

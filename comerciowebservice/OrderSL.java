@@ -42,11 +42,26 @@ public class OrderSL{
 	    }
 	return prod;
     }
-    public Pedido crearPedido(int id, Producto carrito, String nombre, float precio, String direccion) throws Exception{
+    public Pedido crearPedido(Producto carrito, String nombre, float precio, String direccion) throws Exception{
 	Pedido ped=null;
 	Usuario usu=null;
 	usu=existeUsuario(nombre);
 	if((usu.getSaldo())>= precio){	  //Devuelve el pedido o null si no tienes saldo suficiente
+		int id;
+		boolean repetido = false;
+		do{
+			Random numAleatorio = new Random();   // Genera un int de forma aleatoria, comprueba que no esté repetido en la lista	
+			id = numAleatorio.nextInt();     // y que no sea negativo
+			if (id<0)
+				id = id * (-1);
+			Iterator<Pedido> recorrer_pedidos = Pedidos.iterator();
+		    	while(recorrer_pedidos.hasNext()) {
+				ped = recorrer_pedidos.next(); 
+		       		if(ped.getId()==id){
+					repetido = true;
+				}
+		   	 }
+		}while(repetido);
 	ped= new Pedido(id, carrito, nombre, precio, direccion);
 	Pedidos.add(ped);
 	usu=setSaldo(nombre, precio*-1);	

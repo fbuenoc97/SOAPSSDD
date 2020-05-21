@@ -73,12 +73,13 @@ public class OrderSL{
 	Usuario usuario = null;
 	Usuario usu = null;
 	Iterator<Usuario> recorrer_usuarios = Usuarios.iterator();
-            while(recorrer_usuarios.hasNext()) {
-		usuario = recorrer_usuarios.next(); 
-                if(usuario.getNombre().equals(nombre))
-			existe = true;
-			usu = usuario;
-			}
+	while(recorrer_usuarios.hasNext()) {
+	    usuario = recorrer_usuarios.next(); 
+	    if(usuario.getNombre().equals(nombre)){
+		existe = true;
+		usu = usuario;
+	    }
+	}
         return usu;
   	}
      public boolean existeProducto(String nombre) throws Exception { //Para comprobar si el usuario existe, devuelve 1 si existe
@@ -152,15 +153,15 @@ public class OrderSL{
                 existe = 1;
             }
         }
-        if (existe == 1){
-            Pedido vped [] = new Pedido [v.size()];
+       Pedido vped [] = new Pedido [v.size()];
+        if (existe == 1){            
             for (int k=0; k < v.size(); k++) {
                 vped[k] = (Pedido)v.get(k);
             }
             
-            return vped;
+            
         }
-        else
-            throw new Exception ("Nombre no encontrado");
+        return vped;
+            
     }
 }

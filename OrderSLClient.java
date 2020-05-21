@@ -33,7 +33,7 @@ public class OrderSLClient {
 	Scanner sc=new Scanner(System.in);
 	String nombre;
 	nombre=sc.nextLine();
-
+	
 	usu= port.existeUsuario(nombre);
 	if(usu==null){
 	    System.out.println("Introduzca la direccion del usuario: ");
@@ -248,6 +248,7 @@ public class OrderSLClient {
 		    }
 		}
 		if(existe){
+		    existe=false;
 		    try{
 			pedido=srv.crearPedido(producto, u.getNombre(), producto.getPrecio(), u.getDireccion());
 		    }catch(Exception e){

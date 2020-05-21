@@ -19,7 +19,7 @@ public class OrderSLClient {
 
     public static void main(String [] args) throws Exception {
 
-        // Crear un servicio periodico
+        // Crear un servicio OrderSL
         OrderSLService service = new OrderSLServiceLocator();
 
         // Obtener un stub que utilizaremos para invocar los métodos remotos

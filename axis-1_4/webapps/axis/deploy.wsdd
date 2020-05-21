@@ -4,21 +4,29 @@
      <service name="OrderSL" provider="java:RPC">
 
       <parameter name="scope" value="application"/>
-      <parameter name="className" value="OrderSLwebservice.OrderSL"/>
+      <parameter name="className" value="comerciowebservice.OrderSL"/>
       <parameter name="allowedMethods" value="*"/>
 
       <beanMapping qname="ns:Usuario" xmlns:ns="http://www.uc3m.es/WS/OrderSL"
-            languageSpecificType="java:OrderSLwebservice.Usuario"/>
-
-	    <beanMapping qname="ns:Pedido" xmlns:ns="http://www.uc3m.es/WS/OrderSL"
-            languageSpecificType="java:OrderSLwebservice.Pedido"/>
+            languageSpecificType="java:comerciowebservice.Usuario"/>
 
 	    <beanMapping qname="ns:Producto" xmlns:ns="http://www.uc3m.es/WS/OrderSL"
-            languageSpecificType="java:OrderSLwebservice.Producto"/>
+            languageSpecificType="java:comerciowebservice.Producto"/>
 
-      <arrayMapping qname="ns:ArrayOfPedido" xmlns:ns="http://www.uc3m.es/WS/OrderSL"
-                 languageSpecificType="java:OrderSLwebservice.Pedido[]" innerType="ns:Pedido"
+	    <beanMapping qname="ns:Pedido" xmlns:ns="http://www.uc3m.es/WS/OrderSL"
+            languageSpecificType="java:comerciowebservice.Pedido"/>
+
+      <arrayMapping qname="ns:ArrayOfUsuario" xmlns:ns="http://www.uc3m.es/WS/OrderSL"
+                 languageSpecificType="java:comerciowebservice.Usuario[]" innerType="ns:Usuario"
                  encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+
+      <arrayMapping qname="ns:ArrayOfProducto" xmlns:ns="http://www.uc3m.es/WS/OrderSL"
+                 languageSpecificType="java:comerciowebservice.Producto[]" innerType="ns:Producto"
+                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		 
+	<arrayMapping qname="ns:ArrayOfPedido" xmlns:ns="http://www.uc3m.es/WS/OrderSL"
+                 languageSpecificType="java:comerciowebservice.Pedido[]" innerType="ns:Pedido"
+                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>	 
 
      </service>
 

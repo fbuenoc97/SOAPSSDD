@@ -24,12 +24,14 @@
  <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
  <service name="OrderSL" provider="java:RPC">
   <parameter name="allowedMethods" value="*"/>
-  <parameter name="className" value="OrderSLwebservice.OrderSL"/>
+  <parameter name="className" value="comerciowebservice.OrderSL"/>
   <parameter name="scope" value="application"/>
-  <beanMapping languageSpecificType="java:OrderSLwebservice.Usuario" qname="ns1:Usuario" xmlns:ns1="http://www.uc3m.es/WS/OrderSL"/>
-  <beanMapping languageSpecificType="java:OrderSLwebservice.Pedido" qname="ns2:Pedido" xmlns:ns2="http://www.uc3m.es/WS/OrderSL"/>
-  <beanMapping languageSpecificType="java:OrderSLwebservice.Producto" qname="ns3:Producto" xmlns:ns3="http://www.uc3m.es/WS/OrderSL"/>
-  <arrayMapping innerType="ns4:Pedido" languageSpecificType="java:OrderSLwebservice.Pedido[]" qname="ns4:ArrayOfPedido" xmlns:ns4="http://www.uc3m.es/WS/OrderSL"/>
+  <beanMapping languageSpecificType="java:comerciowebservice.Usuario" qname="ns1:Usuario" xmlns:ns1="http://www.uc3m.es/WS/OrderSL"/>
+  <beanMapping languageSpecificType="java:comerciowebservice.Producto" qname="ns2:Producto" xmlns:ns2="http://www.uc3m.es/WS/OrderSL"/>
+  <beanMapping languageSpecificType="java:comerciowebservice.Pedido" qname="ns3:Pedido" xmlns:ns3="http://www.uc3m.es/WS/OrderSL"/>
+  <arrayMapping innerType="ns4:Usuario" languageSpecificType="java:comerciowebservice.Usuario[]" qname="ns4:ArrayOfUsuario" xmlns:ns4="http://www.uc3m.es/WS/OrderSL"/>
+  <arrayMapping innerType="ns5:Producto" languageSpecificType="java:comerciowebservice.Producto[]" qname="ns5:ArrayOfProducto" xmlns:ns5="http://www.uc3m.es/WS/OrderSL"/>
+  <arrayMapping innerType="ns6:Pedido" languageSpecificType="java:comerciowebservice.Pedido[]" qname="ns6:ArrayOfPedido" xmlns:ns6="http://www.uc3m.es/WS/OrderSL"/>
  </service>
  <service name="AdminService" provider="java:MSG">
   <parameter name="allowedMethods" value="AdminService"/>

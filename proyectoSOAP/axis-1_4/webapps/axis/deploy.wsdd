@@ -22,7 +22,11 @@
 
       <arrayMapping qname="ns:ArrayOfProducto" xmlns:ns="http://www.uc3m.es/WS/OrderSL"
                  languageSpecificType="java:comerciowebservice.Producto[]" innerType="ns:Producto"
-                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>		 
+                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+		 
+	<arrayMapping qname="ns:ArrayOfPedido" xmlns:ns="http://www.uc3m.es/WS/OrderSL"
+                 languageSpecificType="java:comerciowebservice.Pedido[]" innerType="ns:Pedido"
+                 encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>	 
 
      </service>
 

@@ -5,9 +5,9 @@
   <parameter name="enableNamespacePrefixOptimization" value="false"/>
   <parameter name="dotNetSoapEncFix" value="true"/>
   <parameter name="disablePrettyXML" value="true"/>
-  <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
-  <parameter name="sendXsiTypes" value="true"/>
   <parameter name="sendMultiRefs" value="true"/>
+  <parameter name="sendXsiTypes" value="true"/>
+  <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
   <parameter name="sendXMLDeclaration" value="true"/>
   <requestFlow>
    <handler type="java:org.apache.axis.handlers.JWSHandler">
@@ -31,6 +31,7 @@
   <beanMapping languageSpecificType="java:comerciowebservice.Pedido" qname="ns3:Pedido" xmlns:ns3="http://www.uc3m.es/WS/OrderSL"/>
   <arrayMapping innerType="ns4:Usuario" languageSpecificType="java:comerciowebservice.Usuario[]" qname="ns4:ArrayOfUsuario" xmlns:ns4="http://www.uc3m.es/WS/OrderSL"/>
   <arrayMapping innerType="ns5:Producto" languageSpecificType="java:comerciowebservice.Producto[]" qname="ns5:ArrayOfProducto" xmlns:ns5="http://www.uc3m.es/WS/OrderSL"/>
+  <arrayMapping innerType="ns6:Pedido" languageSpecificType="java:comerciowebservice.Pedido[]" qname="ns6:ArrayOfPedido" xmlns:ns6="http://www.uc3m.es/WS/OrderSL"/>
  </service>
  <service name="AdminService" provider="java:MSG">
   <parameter name="allowedMethods" value="AdminService"/>

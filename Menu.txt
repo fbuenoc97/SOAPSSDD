@@ -1,0 +1,8 @@
+Elige la operación que quieras realizar:
+1.Comprobar pedidos
+2.Mostrar catálogo
+3.Realizar pedido
+4.Modificar direccion
+5.Añadir saldo
+6.Añadir producto al catálogo
+7.Salir

@@ -184,11 +184,10 @@ public class OrderSLClient {
 	
     }
 
-    public static Pedido realizarPedido(Usuario u, Producto[] catalogo, OrderSL srv){ //Esta función le pasará al servidor un array de int con las id de los productos que quiere pedir el cliente
-	Usuario usuario=u; //Este objeto usuario será el que se devuelva al main para que el cliente tenga el usuario actualizado 
+    public static Pedido realizarPedido(Usuario u, Producto[] catalogo, OrderSL srv){ //Esta función le pasará al servidor todo lo necesario para añadir un nuevo producto al catalogo
 	int flag = 0;
 	Producto producto=null;
-	Pedido pedido=null;
+	Pedido pedido=null;//Este objeto pedido será el que se devuelva al main
 	int aux=0;
 	boolean existe = false;
 	int i=0;
@@ -276,9 +275,9 @@ public class OrderSLClient {
 		System.out.println("Error introduciendo datos"); 
 	    }
 	    try{
-		existe = srv.existeProducto(nombre);
+		existe = srv.existeProducto(nombre); //Comprobamos si existe el producto
 		if(existe){
-		    System.out.println("El nombre del producto ya existe"); 		//Comprobamos si existe el producto
+		    System.out.println("El nombre del producto ya existe"); 		
 		    flag4=1;
 		}
 	    }catch(Exception e){
@@ -298,7 +297,7 @@ public class OrderSLClient {
 	}while(flag4==1);
 	try{
 	    int id;
-	    Random numAleatorio = new Random();   // Genera un int de forma aleatoria, comprueba que no esté repetido en la lista 
+	    Random numAleatorio = new Random();   // Genera un int de forma aleatoria
 		id = numAleatorio.nextInt();
 		srv.crearProducto(nombre, id, precio);
 	}catch(Exception e){
